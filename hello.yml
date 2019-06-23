@@ -8,4 +8,23 @@
       - name: Print helo
         debug:
           msg: "helo output: {{ helo.stdout }}"
+      - name: print memory
+        shell: sshpass -p 'iis123' ssh root@192.168.10.116 -o StrictHostKeyChecking=no "free -m"
+        register: mem1
+
+      - name: Print mem1
+        debug:
+          msg: "{{ mem1.stdout }}"    
+      - name: print memory2
+        shell: sshpass -p 'iis123' ssh root@192.168.10.117 -o StrictHostKeyChecking=no "free -m"
+        register: mem2
+
+      - name: Print mem2
+        debug:
+          msg: "{{ mem2.stdout }}"        
+          
+          
+     
+     
+     
 
