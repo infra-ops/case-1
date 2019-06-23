@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: dev
   tasks:
       - name: print hello
         shell: echo "hello world" 
